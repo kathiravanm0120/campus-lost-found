@@ -1,0 +1,17 @@
+services:
+  mysql:
+    image: mysql:8.4
+    container_name: campus-lost-found-mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: campus_lost_found
+      MYSQL_USER: campus
+      MYSQL_PASSWORD: campus123
+      MYSQL_ROOT_PASSWORD: root123
+    ports:
+      - "3306:3306"
+    volumes:
+      - campus_mysql_data:/var/lib/mysql
+
+volumes:
+  campus_mysql_data:
