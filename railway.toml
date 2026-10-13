@@ -1,6 +1,6 @@
 [build]
 builder = "nixpacks"
-buildCommand = "cd backend && mvn clean package -DskipTests"
+buildCommand = "mvn -f backend/pom.xml clean package -DskipTests"
 
 [deploy]
 startCommand = "java -jar backend/target/campus-lost-found-0.0.1-SNAPSHOT.jar"
